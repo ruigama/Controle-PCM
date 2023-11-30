@@ -31,7 +31,6 @@ namespace Controle_PCM.Views
 
             if (result == MessageBoxResult.Yes)
             {
-                // Fechar a aplicação
                 Application.Current.Shutdown();
             }
         }
@@ -41,15 +40,31 @@ namespace Controle_PCM.Views
             AbrirFormulario();
         }
 
+        private void MenuItem_Pesquisa_Click(object sender, RoutedEventArgs e)
+        {
+            AbrirPesquisa();
+        }
+
         private void Button_AbrirFormulario_Click(object sender, RoutedEventArgs e)
         {
             AbrirFormulario();
+        }
+
+        private void Button_AbrirPesquisa_Click(object sender, RoutedEventArgs e)
+        {
+            AbrirPesquisa();
         }
 
         private void AbrirFormulario()
         {
             Formulario formulario = new Formulario();
             formulario.Show();
+        }
+
+        private void AbrirPesquisa()
+        {
+            Pesquisar pesquisar = new Pesquisar();
+            pesquisar.Show();
         }
     }
 }

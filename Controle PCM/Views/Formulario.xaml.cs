@@ -33,10 +33,8 @@ namespace Controle_PCM.Views
             {
                 foreach (string fileName in openFileDialog.FileNames)
                 {
-                    // Adicione o caminho do arquivo à lista ou faça o que for necessário
                     listaImagens.Items.Add(fileName);
                 }
-
             }
         }
 

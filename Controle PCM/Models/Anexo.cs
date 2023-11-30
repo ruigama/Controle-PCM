@@ -15,5 +15,6 @@ namespace Controle_PCM.Models
         public int id { get; set; }
         public string anexo { get; set; }
         public int id_formulario { get; set; }
+        public Informacoes Informacoes { get; set; }
     }
 }

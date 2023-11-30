@@ -21,5 +21,6 @@ namespace Controle_PCM.Models
         public string preco_atual { get; set; }
         public string avaliacao_tecnica { get; set; }
         public int status { get; set; }
+        public List<Anexo> Anexos { get; set; } = new List<Anexo>();
     }
 }

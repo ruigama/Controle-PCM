@@ -1,0 +1,67 @@
+﻿<Window x:Class="Controle_PCM.Views.Pesquisar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Controle_PCM.Views"
+        mc:Ignorable="d"
+        Title="Pesquisar" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Altura automática para o título -->
+            <RowDefinition Height="Auto"/>
+            <!-- Altura automática para os controles -->
+            <RowDefinition Height="*"/>
+            <!-- Altura proporcional para o DataGrid -->
+        </Grid.RowDefinitions>
+        <Label Content="Pesquisar equipamento" FontStyle="Normal" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Label Content="Modelo" Margin="51,29,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.611,7.741"/>
+        <TextBox 
+            x:Name="parametro" 
+            TextWrapping="WrapWithOverflow" 
+            Margin="39,54,0,0" 
+            Width="150" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            BorderThickness="2,2,2,2" 
+            BorderBrush="#ced4da"
+            Background="#ffffff"
+            Foreground="#495057"
+            FontSize="14" 
+            Height="32" FontStyle="Normal" 
+            TextAlignment="Left" 
+            VerticalContentAlignment="Center" 
+            />
+        <Button 
+            x:Name="pesquisa" 
+            Content="Pesquisar" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top" 
+            Margin="0,50,487,349" 
+            Background="#FF0C66C7" 
+            Width="88" 
+            Height="30" 
+            FontFamily="Microsoft Sans Serif" 
+            FontSize="16" 
+            FontWeight="Bold" 
+            Foreground="#FFFFF9F9" Click="pesquisar_Click"/>
+
+        <DataGrid x:Name="resultadoGrid" AutoGenerateColumns="False" Margin="10,100,10,10">
+            <DataGrid.Columns>
+                <!-- Defina as colunas como necessário, AutoGenerateColumns="False" desativa a geração automática -->
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Código" Binding="{Binding codigo}" />
+                <DataGridTextColumn Header="Modelo" Binding="{Binding modelo}" />
+
+                <DataGridTemplateColumn Header="Imprimir">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Imprimir" Click="Imprimir_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
